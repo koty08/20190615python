@@ -10,6 +10,6 @@ else:
 
 pocket = ['paper', 'cellphone']
 if 'money' in pocket:
-    print("택시")
+    print("택시")   
 else:
     print("걷기")
