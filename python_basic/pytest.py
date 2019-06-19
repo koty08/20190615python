@@ -95,3 +95,31 @@ for i in range(5):
     lotto.sort()
     print("로또 : {}".format(lotto))
 
+#야구게임
+import random
+
+count =0
+numr =range(1,10)
+
+a= random.sample(numr,3)
+print('게임 시작!')
+while True:
+    strk=0
+    ball=0
+    me= input('세자리 숫자 입력:')
+    for i in range(3):
+        for j in range(3):
+            if(me[i]== str(a[j]) and i==j):
+                strk+=1
+            if(me[i]== str(a[j]) and i!=j):
+                ball+=1
+           
+    count+=1
+    if strk==0 and ball ==0:
+           print('아웃!')
+           continue
+    if strk==3:
+           print('정답!, 횟수: {}'.format(count))
+           break;
+    print('{}strike {}ball'.format(strk, ball))
+
