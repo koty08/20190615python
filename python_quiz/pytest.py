@@ -84,7 +84,7 @@ while True:
         count+=1
         print("정답입니다. {}번 만에 맞추셨습니다.".format(count))'''
 
-#로또번호생성
+'''#로또번호생성
 import random
 
 for i in range(5):
@@ -93,9 +93,9 @@ for i in range(5):
         a= random.randint(1,45)
         lotto.append(a)
     lotto.sort()
-    print("로또 : {}".format(lotto))
+    print("로또 : {}".format(lotto))'''
 
-#야구게임
+'''#야구게임
 import random
 
 count =0
@@ -121,5 +121,25 @@ while True:
     if strk==3:
            print('정답!, 횟수: {}'.format(count))
            break;
-    print('{}strike {}ball'.format(strk, ball))
+    print('{}strike {}ball'.format(strk, ball))'''
 
+'''#타자게임
+
+import random
+import time
+
+lis = [ 'abc', 'def', 'cdq', 'dqwd','fgs','fkoewq','qwpoer','pvbksd','slkadvj']
+q = random.sample(lis, 5)
+a= 0
+
+input('엔터를 누르면 시작합니다.')
+start = time.time()
+while a<5:
+    print('문제 {} : {}\n'.format(a+1, q[a]))
+    me = input()
+    if me == q[a]:
+        print('정답!')
+        a+=1
+end = time.time()
+res= end-start
+print('걸린 시간 : %.2f초'% res)'''
