@@ -1,4 +1,4 @@
-import re
+import re, sys, pickle, os, json
 
 class Customer:
     custlist=[]
@@ -11,32 +11,38 @@ class Customer:
             C - 현재 고객 정보 조회
             P - 이전 고객 정보 조회
             N - 다음 고객 정보 조회
+            L - 전체 고객 정보 출력
             U - 고객 정보 수정
             D - 고객 정보 삭제
+            S - 저장
             Q - 프로그램 종료
             ''').upper()
             if self.menu == 'I':
-                self.Insert_cust()
+                self.insert_cust()
             elif self.menu == 'C':
                 self.print_page(self.page)
             elif self.menu == 'P':
                 self.page=self.prev_page(self.page)
             elif self.menu == 'N':
                 self.page=self.next_page(self.page)
+            elif self.menu == 'L':
+                self.printlist()
             elif self.menu == 'U':
                 self.update_cust()
             elif self.menu == 'D':
                 self.page=self.del_cust(self.page)
+            elif self.menu == 'S':
+                self.saveData()
             elif self.menu == 'Q':
-                print('종료합니다.')
-                break
+                self.quit()
             else :
                 print('잘못 입력하셨습니다.\n')
 
     def __init__(self):
+        self.page=self.loadData(self.page)
         self.first_input()
 
-    def Insert_cust(self):
+    def insert_cust(self):
         customer={'name':'', 'sex':'','email':'','birthyear':''}
         customer['name']= self.cust_name()
         customer['sex']= self.cust_sex()
@@ -177,5 +183,29 @@ class Customer:
             print('등록되어있지 않은 이메일입니다.')
         pg=len(self.custlist)-1
         return pg
+    
+    def saveData(self):
+        with open("./python_quiz/data.json", 'wt') as f:
+            json.dump(self.custlist, f, indent=4)
+            print('저장되었습니다.')
+        
+    def loadData(self, pg):
+        if os.path.exists("./python_quiz/data.json"): #파일 있는지 확인
+            with open("./python_quiz/data.json", 'rt') as f:
+                self.custlist = json.load(f)
+                print(self.custlist)
+                pg = len(self.custlist)-1
+                return pg
+        
+    def printlist(self):
+        print('전체 고객 리스트 :')
+        for i in self.custlist:
+            print(i)
+        
+    def quit(self):
+        print('프로그램을 종료합니다.')
+        self.saveData()
+        print('자동 저장 완료!')
+        sys.exit()
 
 a=Customer()
