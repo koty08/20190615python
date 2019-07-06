@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>마우스 이벤트 연습</title>
+</head>
+<body>
+<h1 id="title">마우스 이벤트</h1>
+<a href="#" id="btn"><img src="images/btn_out.png"></a>
+<p id="img_src"></p>
+<script>
+var btn = document.getElementById("btn");
+var s = document.getElementById("img_src");
+btn.onmouseover = function() {
+document.getElementById("title").innerHTML = "마우스 오버";
+btn.firstChild.src="images/btn_over.png";
+s.innerHTML = btn.firstChild.src;
+}
+btn.onmouseout = function(){
+document.getElementById("title").innerHTML = "마우스 오버";
+btn.firstChild.src="images/btn_out.png";
+s.innerHTML = btn.firstChild.src;
+}
+</script>
+</body>
+</html>.

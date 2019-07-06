@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>계절</title>
+</head>
+<body>
+<script type="text/javascript">
+    var season = prompt("좋아하는 계절 입력", "봄");
+    var msg="";
+    var img="";
+    switch(season){
+        case "봄":
+        msg="봄을 좋아하시네요";
+        img = "spring.jpg";
+        break;
+        case "여름":
+        msg="여름을 좋아하시네요";
+        img = "summer.jpg";
+        break;
+        case "가을":
+        msg="가을을 좋아하시네요";
+        img = "autumn.jpg";
+        break;
+        case "겨울":
+        msg="겨울을 좋아하시네요";
+        img = "winter.jpg";
+        break;
+        default:
+            alert("계절 잘못 입력.");
+    }
+document.write("<h2>"+msg+"<\h2>");
+document.write("<img src='images/"+img+"'")
+</script>
+</body>
