@@ -1,0 +1,48 @@
+{% extends 'default2.html' %}
+{% block title %}
+메인 페이지
+{% endblock %}
+
+{% block contents %}
+<!-- 점보트론 -->
+<div class="container-fluid">
+        <div class="jumbotron" style="background-image: url('static/image/bg.jpg') ; background-size: cover; background-repeat : no-repeat; ">
+            <h1 class="display-4">PC방 게임 사용량 순위</h1>
+            <p class="lead">2019-07-12 일자</p>
+            <hr class="my-4">
+            <p>게임사용량은 전국에 분포되어 있는 표본 PC에서 사용된 게임사용량을 취합하여 순위를 산정하고 지역별 · 서비스형태별 · 장르별 등 
+                    다양하고 자세한 데이터를 확인할 수 있는 서비스 입니다.
+                    CBT(Close Beta Test) 게임은 참여 유저수에 따라 게임사용시간에 영향을 미칠 수 있습니다.</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">더 알아보기</a>
+        </div>
+    </div>
+<!-- 카드 덱-->
+<div class="container-fluid">
+    <div class="card-deck">
+        <div class="card">
+            <img src="static/image/lol.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">1위 : 리그 오브 레전드</h5>
+            <p class="card-text"><리그 오브 레전드>(League of Legends, LoL)는 라이엇 게임즈에서 개발, 서비스하는 멀티플레이어 온라인 배틀 아레나 게임이다. </p>
+            <p class="card-text"><small class="text-muted">장르 : RTS</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="static/image/btg.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">2위 : 배틀그라운드</h5>
+            <p class="card-text">《배틀그라운드》(영어: PLAYERUNKNOWN'S BATTLEGROUNDS, PUBG)는 PUBG 주식회사(前 블루홀 지노게임즈)에서 개발하고 크래프톤에서 발행한 서바이벌 슈터 게임이다.</p>
+            <p class="card-text"><small class="text-muted">장르 : FPS</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="static/image/ow.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">3위 : 오버워치</h5>
+            <p class="card-text">《오버워치》(영어: Overwatch)는 블리자드 엔터테인먼트가 개발하고 배급하는 다중 사용자 1인칭 슈팅 게임이다.</p>
+            <p class="card-text"><small class="text-muted">장르 : FPS</small></p>
+            </div>
+        </div>
+        </div>
+</div>
+{% endblock %}
