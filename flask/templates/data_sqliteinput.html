@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>데이터 입력</title>
+</head>
+<body>
+    <form action="/dbinsert/" method="POST">
+    <table style = "border: 1px solid;">
+    <tr>
+    <td>제목</td>
+    <td>출판일</td>
+    <td>출판사</td>
+    <td>페이지수</td>
+    <td>추천수</td>
+    </tr>
+    <tr>
+    <td><input type="text" name="title"></td>
+    <td><input type="text" name="published_date"></td>
+    <td><input type="text" name="publisher" ></td>
+    <td><input type="text" name="pages" ></td>
+    <td><input type="text" name="recommend" ></td>
+    </tr>
+    </table>
+    <br>
+    <input type="submit" value="제출" >
+    </form>
+</body>
+
+</html>
