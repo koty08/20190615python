@@ -22,6 +22,7 @@ def dbinsert():
 
 @app.route('/list/')
 def list_user():
+    db.create_table()
     users=db.all_users()
     return render_template('list.html',users=users)
 
