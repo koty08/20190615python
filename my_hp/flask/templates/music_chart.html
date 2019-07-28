@@ -1,0 +1,38 @@
+{% extends 'default.html' %}
+{% block title %}
+뮤직 차트 페이지
+{% endblock %}
+
+{% block contents %}
+<div class="jumbotron jumbotron-fluid" style = "background-image: url('/static/jumbo_bg.jpg'); background-repeat: no-repeat">
+    <div class="container">
+          <h1 class="display-4">음악 차트</h1>
+          <br>
+          <p class="lead">이 차트는 네이버뮤직 차트에 기반하여 만들어졌습니다.</p>
+    </div>
+</div>
+
+<table class="table table-sm">
+    <thead>
+        <tr>
+        <th scope="col">순위</th>
+        <th scope="col">사진</th>
+        <th scope="col">곡명</th>
+        <th scope="col">아티스트</th>
+        <th scope="col">자세히</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for music in musics %}
+        <tr>
+            <th scope="row">{{music['rank']}}</th>
+            <td><img src ='{{music.link}}'></td>
+            <td>{{music['name']}}</td>
+            <td>{{music['artist']}}</td>
+            <td><button class="btn btn-outline-primary">자세히</button></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
