@@ -13,11 +13,12 @@ def conn_db():
 def create_table():
     conn=conn_db()
     c=conn.cursor()
-    c.execute('''create table if not exists music(
-        rank int NOT NULL,
-        link varchar(400),
-        name varchar(400),
-        artist varchar(50)
+    c.execute('''create table if not exists music2(
+        link varchar(200),
+        artist varchar(100),
+        genre varchar(100),
+        date varchar(100),
+        company varchar(100)
         )''')
     conn.commit()
     conn.close()
@@ -26,16 +27,17 @@ def create_table():
 def insert_music(items):
     conn=conn_db()
     c=conn.cursor()
-    sql='insert into music values(%s,%s,%s,%s)'
+    sql='insert into music2 values(%s,%s,%s,%s,%s)'
     c.executemany(sql, items) 
     conn.commit()
     conn.close()
 
-#전체 데이터 출력 함수
-def all_music():
+#데이터한개 출력함수
+def all_music(idx):
     conn=conn_db()
     c=conn.cursor()
-    c.execute("SELECT * FROM music")
+    c.execute("SELECT * FROM music2")
     items=c.fetchall()
+    item = items[idx]
     conn.close()
-    return items
+    return item

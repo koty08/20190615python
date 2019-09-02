@@ -1,0 +1,32 @@
+{% extends 'default.html' %}
+{% block title %}
+음악 페이지
+{% endblock %}
+
+{% block contents %}
+<img src ='{{music.link}}'>
+<table class="table table-sm">
+    <thead>
+        <tr>
+        <th scope="col">아티스트</th>
+        <th scope="col">장르</th>
+        <th scope="col">발매일</th>
+        <th scope="col">배급사</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{music['artist']}}</td>
+            <td>{{music['genre']}}</td>
+            <td>{{music['date']}}</td>
+            <td>{{music['company']}}</td>
+        </tr>
+    </tbody>
+</table>
+<div class="media">
+    <div class="media-body">
+        <h5 class="mt-0">가사</h5>
+        <p>{{ lyric }}</p>
+    </div>
+</div>
+{% endblock %}

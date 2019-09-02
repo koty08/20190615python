@@ -10,6 +10,7 @@ table = soup.select_one('table')
 table2 = table.select('tr._tracklist_move ')
 list_music = []
 lyricLocation_list = []
+getinfo_list = []
 
 for i,r in enumerate(table2):
     if i==0:
@@ -21,6 +22,7 @@ for i,r in enumerate(table2):
             elif j==3:
                 link = c.select_one('img')['src']
                 name = c.select_one('a>span.ellipsis').text.strip()
+                getinfo_list.append(c.select_one('a')['href'][-7:])
             elif j==4:
                 artist=c.text.strip()
             elif j==6:
@@ -31,7 +33,7 @@ for i,r in enumerate(table2):
             list_music.append(music_t)
         except:
             pass
-
+# print(lyricLocation_list)
 # print(list_music)
 
 # db.create_table()

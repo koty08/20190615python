@@ -29,7 +29,7 @@
             <td><img src ='{{music.link}}'></td>
             <td>{{music['name']}}</td>
             <td>{{music['artist']}}</td>
-            <td><button class="btn btn-outline-primary">자세히</button></td>
+            <td><button class="btn btn-outline-primary" onclick="location.href='/music_info/{{music.rank}}'">자세히</button></td>
         </tr>
         {% endfor %}
     </tbody>
